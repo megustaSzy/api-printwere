@@ -10,7 +10,10 @@ app.get("/", (req, res) => {
         status: 200,
         message: "Welcome API"
     })
-})
+});
+
+
+app.use("/api/auth", )
 
 
 export default app;
