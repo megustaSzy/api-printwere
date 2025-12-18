@@ -1,13 +1,17 @@
 import { Router } from "express";
-import { userController } from "../controllers/userController";
+// import { asyncHandler } from "../middlewares/asyncHandler";
+import { authController } from "../controllers/authController";
+
 
 const router = Router();
 
-router.get("/", userController.getAll);
-router.get("/:id", userController.getById);
+router.post("/register", authController.register);
 
-router.put("/:id", userController.edit);
+router.post("/login", authController.login);
 
-router.delete("/:id", userController.deleteById);
+router.post("/refresh", authController.refreshToken);
+
+router.post("/logout", authController.logout);
+
 
 export default router;
