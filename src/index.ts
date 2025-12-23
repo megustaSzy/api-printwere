@@ -10,7 +10,9 @@ import { requestLogger } from "./middlewares/logger";
 
 import userRoute from "./routes/userRoute";
 import authRoute from "./routes/authRoute";
-import productRoute from "./routes/productRoute"
+import productRoute from "./routes/productRoute";
+import orderRoute from "./routes/orderRoute";
+import orderItemRoute from "./routes/orderItemRoute"
 
 const app = express();
 
@@ -38,7 +40,9 @@ app.get("/", (req, res) => {
 
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
-app.use("/api/product", productRoute)
+app.use("/api/products", productRoute);
+app.use("/api/orders", orderRoute);
+app.use("/api/order-items", orderItemRoute);  
 
 
 export default app;
