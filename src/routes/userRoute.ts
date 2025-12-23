@@ -6,15 +6,10 @@ import { authorizeRoles } from "../middlewares/roleMiddleware";
 
 const router = Router();
 
-// User melihat profil sendiri
 router.get("/profile", authMiddleware, userController.getProfile);
-
 router.get("/", authMiddleware, authorizeRoles("Admin"), userController.getAll);
-
 router.get("/:id", authMiddleware, userController.getById);
-
 router.patch("/:id", authMiddleware, userController.edit);
-
 router.delete("/:id", authMiddleware, authorizeRoles("Admin"), userController.deleteById);
 
 export default router;
