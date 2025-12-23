@@ -10,6 +10,7 @@ import { requestLogger } from "./middlewares/logger";
 
 import userRoute from "./routes/userRoute";
 import authRoute from "./routes/authRoute";
+import productRoute from "./routes/productRoute"
 
 const app = express();
 
@@ -37,6 +38,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/product", productRoute)
 
 
 export default app;
